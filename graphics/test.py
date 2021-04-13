@@ -33,8 +33,8 @@ class MainWindow(QMainWindow):
         label.setPixmap(QPixmap("../figures/draw-blue-circle.jpg"))
         table.setCellWidget(0, 1, label)
 
-        hor_layout = QHBoxLayout(central_widget)QWidget
-        vertical_layout.addWidget(hor_layout)
+        hor_layout = QHBoxLayout(central_widget)
+
 
         self.verticalLayout.addLayout(self.horizontalLayout_1)
         self.gridLayout.addLayout(self.verticalLayout, 1, 0, 1, 1)

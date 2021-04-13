@@ -2,14 +2,14 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import pyqtSlot, pyqtSignal, QObject
 
-from graphics.installer_interface import Ui_MainWindow
-from logic.game import LogicMatrix, Color, FigureType
+from graphics.uiV2 import Ui_MainWindow
+from logic.game import Level, Color, FigureType
 
 
 # table_view сделать
 # индексы матрицы логики соответствуют индексам строки от sender
 class GrBoard(QMainWindow):
-    def __init__(self, board: LogicMatrix):
+    def __init__(self, board: Level):
         super(GrBoard, self).__init__()
         ui = Ui_MainWindow()
         ui.setupUi(self)

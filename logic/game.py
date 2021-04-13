@@ -62,7 +62,7 @@ class Figure:
 
 
 # table
-class LogicMatrix:
+class Level:
 
     def __init__(self, level):
         self.matrix = [[], [], []]
