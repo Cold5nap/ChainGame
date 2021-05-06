@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw
+from logic.logic import Color, FigureType
 
 
 def create_figures():
@@ -6,8 +7,6 @@ def create_figures():
     im = Image.new('RGB', (100, 100), color)
     c = Circle(50, 50, 50)
     c.draw(im, 'orange')
-    # flag = Flag(40, 10)
-    # flag.draw(im, "red")
     im.save('figures/draw-orange-circle.jpg', quality=95)
 
     im = Image.new('RGB', (100, 100), color)
@@ -75,20 +74,24 @@ class Rectangle:
 
 
 class Flag:
-    def __init__(self, x, y):
+    def __init__(self, x=30, y=10):
         self.x = x
         self.y = y
 
-    def draw(self, im: Image, color: str):
+    def draw_figure(self, color: Color, f_type: FigureType, ):
         x = self.x
         y = self.y
+        str_color
+        str_f_type
+
+        im = Image.new('RGB', (100, 100), color)
         draw = ImageDraw.Draw(im)
         draw.polygon(
             xy=((x, y), (x + 5, y), (x + 5, y + 5), (x + 20, y + 20), (x + 5, y + 35), (x + 5, y + 70), (x, y + 70)),
-            fill=color, outline="black")
+            fill="red", outline="black")
+        im.save('figures/draw-' + str_color + '-' + str_f_type + '.jpg', quality=95)
 
     def create_flag(self):
         color = "red"
-        im = Image.new('RGB', (100, 100), color)
+
         self.draw(im, color)
-        im.save('figures/draw-blue-rectangle.jpg', quality=95)

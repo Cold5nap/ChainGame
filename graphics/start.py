@@ -2,9 +2,8 @@ import sys
 
 from PyQt5 import QtWidgets
 
-from graphics.board import GrBoard
-from graphics.installer_interface import Ui_MainWindow
-from logic.game import Level
+from graphics.graphics import GrBoard
+from logic.logic import Level
 
 
 def display(s):

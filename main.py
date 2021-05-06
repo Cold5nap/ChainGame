@@ -1,7 +1,7 @@
 
 import sys
 
-from graphics.board import display
+from graphics.graphics import display
 
 
 def main():
