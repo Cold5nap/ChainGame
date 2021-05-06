@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-from logic.logic import Color, FigureType
+from logic.logic import Color, FigureType, Figure
 
 
 def create_figures():
@@ -73,25 +73,25 @@ class Rectangle:
                        width=4)
 
 
-class Flag:
-    def __init__(self, x=30, y=10):
-        self.x = x
-        self.y = y
+class FigurePainter:
 
-    def draw_figure(self, color: Color, f_type: FigureType, ):
-        x = self.x
-        y = self.y
-        str_color
-        str_f_type
+    def draw_figure(self, figure: Figure):
+        im = Image.new('RGB', (100, 100), figure.color)
+        if figure.form == FigureType.CIRCLE:
+            circle = Circle(50, 50, 45)
+            circle.draw(im, figure.color)
+        elif figure.form == FigureType.RECTANGLE:
+            rec = Rectangle(10, 10, 80, 80)
+            rec.draw(im, figure.color)
+        else:
+            raise ValueError('Painter Figure Type error')
 
-        im = Image.new('RGB', (100, 100), color)
+        self.create_flag(im)
+        # im.toqpixmap()
+        im.save('figures/draw-' + color.value + '-' + f_type.value + '.jpg', quality=95)
+
+    def create_flag(self, im, x=30, y=10):
         draw = ImageDraw.Draw(im)
         draw.polygon(
             xy=((x, y), (x + 5, y), (x + 5, y + 5), (x + 20, y + 20), (x + 5, y + 35), (x + 5, y + 70), (x, y + 70)),
             fill="red", outline="black")
-        im.save('figures/draw-' + str_color + '-' + str_f_type + '.jpg', quality=95)
-
-    def create_flag(self):
-        color = "red"
-
-        self.draw(im, color)
